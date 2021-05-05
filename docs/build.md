@@ -199,9 +199,24 @@ issues since non-supported versions are not tested.
 For Windows 10, build.py supports both a Docker build and a non-Docker
 build in a similar way as described for [Ubuntu](#ubuntu). The primary
 difference is that the \<xx.yy\>-py3-min image used as the base of the
-Docker build is not available for Windows and so you must generated it
-yourself, as described below. For a non-Docker build you must perform
-the steps contained in this Dockerfile on your build system.
+Ubuntu Docker build is not available for Windows and so you must
+generated it yourself, as described below. For a non-Docker build you
+must install the dependencies contained in this base Dockerfile on
+your build system.
+
+### Windows and Docker
+
+Depending on your version of Windows 10 and your version of Docker you
+may need to perform these additional steps before any of the following
+steps.
+
+* Set your Docker to work with "Windows containers". Right click on
+  the whale icon in the lower-right status area and select "Switch to
+  Windows containers".
+
+* When running "docker build" or "docker run" you may need to specify
+  '--network="Default Switch"' if you see errors like "remote name
+  could not be resolved".
 
 ### Windows 10 "Min" Container
 
